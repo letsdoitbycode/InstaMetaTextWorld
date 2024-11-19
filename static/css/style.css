@@ -1,0 +1,383 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #222;
+    color: #f0f0f0;
+    font-size: 18px;
+}
+
+.sidebar {
+    width: 350px;
+    padding: 20px;
+    background-color: #333;
+    color: #f0f0f0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar img.profile-pic {
+    margin-top: 100px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: 80px; 
+}
+
+.sidebar a {
+    color: #00acee;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+    
+}
+
+.sidebar p {
+    font-size: 20px;
+    margin: 16px 4px;
+    
+}
+
+.sidebar h2{
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1100;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#sidebar h1{
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: 12px;
+    margin-left: 50px;
+
+}
+
+
+/* Main Content */
+.content {
+    margin-left: 350px;
+    padding: 20px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+hr {
+    width: 900px; 
+    height: 3px; 
+    background-color: #ccc; 
+    border: none;
+    margin-bottom: 4px;
+}
+
+
+.subtitle {
+    font-size: 24px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    width: 600px;
+
+}
+
+.upload-container {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-btn, .generate-btn {
+    width: 400px;
+    padding: 12px 20px;
+    font-size: 24px;
+    border: none;
+    background-color: #3d5060;
+    color: #ffffff;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 8px
+}
+
+.upload-btn:hover, .generate-btn:hover {
+    background-color: #666;
+}
+
+.image-name {
+    font-size: 1em;
+    color: #ded9d9;
+    margin: 8px;
+}
+
+.image-container {
+    width: 700px;
+    height: 380px;
+    border: 2px solid #555;
+    border-radius: 6px;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+#uploadedImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.caption-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    padding: 12px;
+    border-radius: 5px;
+    background-color:none;
+    height: auto;
+    width: 800px; 
+}
+
+.caption-text {
+    margin: 8px 0 0 10px;
+    font-style: normal;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #555;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+footer {
+    text-align: center;
+    color: #aaa;
+    font-size: 1em;
+    width: 100%;
+    bottom: 0;
+    margin-top: 100px;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 900px){
+    hr {
+        width: 700px; 
+        height: 2px; 
+        background-color: #ccc; 
+        border: none;
+        margin-bottom: 4px;
+    }
+
+    body{
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .sidebar p {
+        font-size: 18px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }    
+
+    .upload-btn, .generate-btn {
+        width: 380px;
+        padding: 12px 20px;
+        font-size: 20px;
+    }                   
+
+    .image-name {
+        font-size: 0.9em;
+    }    
+    
+    .image-container {
+        width: 680px;
+        height: 360px;
+    }    
+
+    .caption-text {
+        margin: 8px 0 0 10px;
+        font-size: 18px;
+    }
+                            
+    .loader {
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #555;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;                            
+    
+    }
+
+    footer {
+        text-align: center;
+        color: #aaa;
+        font-size: 0.9em;
+    }                        
+
+}
+
+@media (max-width: 736px){
+    hr {
+        width: 600px; 
+        height: 2px; 
+        background-color: #ccc; 
+        border: none;
+        margin-bottom: 4px;
+    }
+
+    body{
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+}
+
+@media (max-width: 600px){
+    .hamburger-menu {
+        display: block; 
+    }
+
+    .sidebar {
+        transform: translateX(-100%); 
+    }
+
+    .sidebar.open {
+        transform: translateX(0); 
+    }
+
+    hr {
+        width: 600px; 
+        height: 2px; 
+        background-color: #ccc; 
+        border: none;
+        margin-bottom: 4px;
+    }
+
+    body{
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 1.7em;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }  
+
+}
+
+
+@media (max-width: 475px){
+    hr {
+        width: 500px; 
+        height: 2px; 
+        background-color: #ccc; 
+        border: none;
+        margin-bottom: 4px;
+    }
+
+    h1 {
+        font-size: 1.3em;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }  
+
+}
+
+@media (max-width: 380px){
+
+    hr {
+        width: 400px; 
+        height: 2px; 
+        background-color: #ccc; 
+        border: none;
+        margin-bottom: 4px;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    footer {
+        text-align: center;
+        color: #aaa;
+        font-size: 0.6em;
+    }       
+    
+}
+
+
+@media (max-width: 335px){
+    h1 {
+        font-size: 1em;
+    }
+
+}
+
+

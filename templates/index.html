@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaMetaText</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+      
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        ☰
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h1>InstaMetaText</h1>
+        <img src="{{ url_for('static', filename='resources/passport.jpg') }}" alt="Your Photo" class="profile-pic">
+        <h2>Akshay Bhosale</h2>
+        <p>📧 Email ID: <a href="mailto:bhosale.akshay1305@gmail.com">Akshay Bhosale</a></p>
+        <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/akshaybhosale-letsdoitbycode" target="_blank">Profile Link</a></p>
+        <p>💻 GitHub: <a href="https://github.com/letsdoitbycode" target="_blank">@letsdoitbycode</a></p>
+    </div>
+
+    <div class="content">
+        <h1>Instagram Content Generator</h1>
+        <hr>
+        <p class="subtitle"><em>Bringing Images to Life with AI-Driven Captions: Transform Your Photos into Narratives</em></p>
+        <div class="upload-container">
+            <button class="upload-btn" onclick="document.getElementById('imageUpload').click()">Upload Image</button>
+            <input type="file" id="imageUpload" accept="image/*" onchange="loadImage(event)" style="display: none;">
+            <p id="imageName" class="image-name"></p>
+            <div class="image-container">
+                <p>Max Image upload Size : 6MB</p>
+                <img id="uploadedImage" src="" alt="Uploaded Image" style="display: none;">
+            </div>
+            <button class="generate-btn" onclick="generateCaption()">Generate Content</button>
+            <div class="caption-container">
+                <div id="loader" class="loader" style="display: none;"></div>
+                <p id="localCaption" class="caption-text"></p>
+                <div id="groqCaption" class="caption-text"></div>
+                <div id="instagramContent" class="caption-text"></div>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2024 letsdoitbycode. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

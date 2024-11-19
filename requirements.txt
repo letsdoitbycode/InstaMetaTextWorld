@@ -1,0 +1,9 @@
+python-dotenv
+flask
+tensorflow
+werkzeug
+numpy
+pillow
+langchain-groq
+groq
+gunicorn
